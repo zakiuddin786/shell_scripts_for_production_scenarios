@@ -41,4 +41,4 @@ check_file(){
 
 check_file employees.txt
 
-# TODO: getting file information, file_size
+# TODO: create functions for getting file information, file_size
