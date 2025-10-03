@@ -1,0 +1,11 @@
+ID,Name,Department,Salary,JoinDate,Email
+101,John Smith,Engineering,75000,2020-01-15,john.smith@company.com
+102,Sarah Johnson,Marketing,65000,2019-03-22,sarah.johnson@company.com
+103,Mike Davis,Engineering,82000,2018-07-10,mike.davis@company.com
+104,Lisa Brown,HR,58000,2021-05-08,lisa.brown@company.com
+105,David Wilson,Sales,70000,2019-11-30,david.wilson@company.com
+106,Emma Taylor,Engineering,78000,2020-09-14,emma.taylor@company.com
+107,James Martinez,Marketing,62000,2021-02-18,james.martinez@company.com
+108,Amy Thompson,Finance,67000,2018-12-05,amy.thompson@company.com
+109,Robert Garcia,Engineering,85000,2017-06-25,robert.garcia@company.com
+110,Jennifer Lee,HR,60000,2020-08-12,jennifer.lee@company.comEOF
