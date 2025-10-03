@@ -3,10 +3,10 @@
 if [ -f "./error.txt" ]; then 
     echo "Error file exists"
 else 
-    echo "File doesn't exist"
+    echo "File doesn't exist Zaki"
 fi
 
-read -p " Who are you? " name
+read -p " Who are you? do you know zaki" name
 read -p "$name please share your grade " grade
 
 if [ "$grade" = "A" ]; then 
