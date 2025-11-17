@@ -1,6 +1,24 @@
 #!/bin/bash
-
+set -eom pipefail # Fail fast on errors
 # this is a utility to run a command within the given timeout and kill if it exceeds the time
+LOG_FILE="./all-logs.log"
+log() {
+    local level=$1 
+    local message=$2
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    echo "[$timestamp] $level : $message" | tee -a "$LOG_FILE"
+}
+
+interrupt_handler() {
+    log warning "The program got interrupted in between, please check what happened"
+    log info "Killing the child processess"
+
+    kill -- -$$ 2>/dev/null
+    exit 130
+}
+
+trap interrupt_handler SIGINT
+
 run_command_with_timeout() {
     local timeout=$1
     # Get the remaining arguments passed (assuming the command is having more arguments)
@@ -50,6 +68,8 @@ echo "Full name is: $full_name"
 
 # writing recursive function
 
+set -x 
+#enable the tracing
 factorial() {
     local num=$1 
 
@@ -64,19 +84,16 @@ factorial() {
         echo $((num * prev))
     fi
 }
+# disable the tracing
 
 # TODO: Run this factorial function using the run_command_with_timeout utility
 echo "Factorial of 5 is : $(factorial 5)"
+set +x 
+
 
 # TODO: Write a recursive directory traversal function
 
 # utility function to print the logs with timestamp and save in a file
-LOG_FILE="./all-logs.log"
-log() {
-    local level=$1 
-    local message=$2
-    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    echo "[$timestamp] $level : $message" | tee -a "$LOG_FILE"
-}
+
 
 log info "hello zaki"
